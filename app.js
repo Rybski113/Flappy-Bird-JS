@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded',()=> {
         bird.style.left = birdLeft + 'px'
     }
 
-     let timerId = setInterval(startGame, 20) 
+     let gametimerId = setInterval(startGame, 20) 
 
 
      function control(e) {
@@ -30,9 +30,26 @@ document.addEventListener('DOMContentLoaded',()=> {
      document.addEventListener('keyup', control)
 
      function generateObstacle() {
+      let obstacleLeft = 500
+      let randomHeight = Math.random() * 60
+      let obstacleBottom = randomHeight
       const obstacle = document.createElement('div')
       obstacle.classList.add('obstacle')
       gameDisplay.appendChild(obstacle)
+      obstacle.style.left = obstacleLeft + 'px'
+      obstacle.style.bottom = obstacleBottom + 'px'
+
+
+      function moveObstacle() {
+        obstacleLeft -=2
+        obstacle.style.left = obstacleLeft + 'px'
+       }
+  
+       let timerId = setInterval(moveObstacle, 20)
      }
+
+     
+
+
      generateObstacle()
 })
