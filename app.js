@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded',()=> {
     let birdLeft = 220
     let birdBottom = 100
     let gravity = 2
+    let isGameOver = false
 
     function startGame() {
         birdBottom -= gravity
@@ -48,7 +49,9 @@ document.addEventListener('DOMContentLoaded',()=> {
             clearInterval(timerId)
             gameDisplay.removeChild(obstacle)
         }
-        if (birdBottom === 0) {
+        if (
+          obstacleLeft > 200 && obstacleLeft < 280 && birdLeft === 220 ||
+          birdBottom === 0) {
           gameOver()
         }
        }
@@ -64,5 +67,8 @@ document.addEventListener('DOMContentLoaded',()=> {
 
      function gameOver() {
       console.log('game over')
+      clearInterval(gametimerId)
+      isGameOver = true
+      document.removeEventListener('keyup', control)
      }
 })
