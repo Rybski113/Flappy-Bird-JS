@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded',()=> {
             clearInterval(timerId)
             gameDisplay.removeChild(obstacle)
         }
+        if (birdBottom === 0) {
+          gameOver()
+        }
        }
   
        let timerId = setInterval(moveObstacle, 20)
@@ -58,4 +61,8 @@ document.addEventListener('DOMContentLoaded',()=> {
 
 
      generateObstacle()
+
+     function gameOver() {
+      console.log('game over')
+     }
 })
