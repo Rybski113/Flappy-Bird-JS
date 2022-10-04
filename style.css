@@ -7,6 +7,7 @@ body {
     height: 730px;
     position: absolute;
     left: 80px;
+
 }
 
 .border-left {
@@ -40,6 +41,7 @@ body {
     width: 500px;
     height: 580px;
     position: absolute;
+    background-image: url(img/fb-game-background.png);
 }
 
 .ground {
@@ -49,13 +51,16 @@ body {
     position: absolute;
     top: 580px;
     z-index: +1;
+    background-image: url(img/bottom-background.png);
 }
 
 .bird {
-    background-color: yellow;
+    
     position: absolute;
     height: 45px;
     width: 60px;
+    background-image: url(img/flappy-bird.png);
+
 }
 
 .obstacle {
